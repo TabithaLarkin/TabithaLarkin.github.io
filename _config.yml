@@ -44,7 +44,7 @@ social:
     # - https://www.facebook.com/username
     - https://www.linkedin.com/in/tabitha-larkin-6a487021/
 
-google_site_verification: bDp5dAPjDAprRG8J-CDyC2U0XVryiLfWwauh4or7ZkM # fill in to your verification string
+google_site_verification: # fill in to your verification string
 
 # ↑ --------------------------
 # The end of `jekyll-seo-tag` settings
