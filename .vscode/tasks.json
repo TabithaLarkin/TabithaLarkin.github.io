@@ -1,0 +1,44 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "dev",
+      "type": "shell",
+      "command": "bundle exec jekyll s",
+      "problemMatcher": []
+    },
+    {
+      "label": "draft",
+      "type": "shell",
+      "command": "bundle exec jekyll draft \"${input:postName}\"",
+      "problemMatcher": []
+    },
+    {
+      "label": "rename",
+      "type": "shell",
+      "command": "bundle exec jekyll rename ${relativeFile} \"${input:postName}\"",
+      "problemMatcher": []
+    },
+    {
+      "label": "publish",
+      "type": "shell",
+      "command": "bundle exec jekyll publish ${relativeFile}",
+      "problemMatcher": []
+    },
+    {
+      "label": "unpublish",
+      "type": "shell",
+      "command": "bundle exec jekyll unpublish ${relativeFile}",
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "postName",
+      "description": "Name of the post"
+    }
+  ]
+}
