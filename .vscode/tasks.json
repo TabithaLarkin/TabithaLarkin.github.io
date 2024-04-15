@@ -6,9 +6,11 @@
     {
       "label": "dev",
       "type": "shell",
-      "command": "bundle exec jekyll s",
+      "command": "bundle exec jekyll s --drafts",
       "problemMatcher": []
     },
+    // Commands to manage posts
+    // https://github.com/jekyll/jekyll-compose
     {
       "label": "draft",
       "type": "shell",
