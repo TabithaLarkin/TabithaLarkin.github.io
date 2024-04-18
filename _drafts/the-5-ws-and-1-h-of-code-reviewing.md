@@ -5,11 +5,13 @@ categories: [Process]
 tags: [code reviews, pull requests, reviewing]
 ---
 
-Code reviews are hard. Whether you have a large team, a small team, a new team or an old team, getting code reviews right is, in my opinion, one of the hardest things about programming processes. I could write for a long time about various different tooling and methodologies for assisting the code review and pull request process. This, however is not what this article is about. Instead we'll be talking about what you can do as a developer when you're assigned a code review.
+Code reviews are hard. Whether you have a large team, a small team, a new team or an old team, getting code reviews right is, in my opinion, one of the hardest things about programming processes. I could write for a long time about various different tooling and methodologies for assisting the code review and pull request process. This, however is not what this article is about. Instead I'll be discussing what you can do as a developer when you're assigned a code review.
 
-Recently I was asked by a colleague "How can we improve our code review process?". During that conversation I described my experience in a recent pull request. This pull request was a fairly harmless move of some utility functions, and the associated import updates that come with the move. There was nothing to suggest from the updates I could see in github that there would be any issues. We're just moving files around. No big deal. LGTM.
+## The origins of this train of thought
 
-It was only when this branch was merged with another, and the approval was reset that I stopped and asked myself the question "Why was this change being made?". It was from that point that led me on a path of discovery about the code that was being changed. I remarked in the previously mentioned conversation that this moment of asking myself "Why?" was part of a personal goal of trying to improve my own approach to reviewing code. It was at this point that I said it was somewhat akin to the 5 Ws and 1 H I learned as a kid at school:
+Recently I was asked by a colleague "How can we improve our code review process?". During that conversation I described my experience reviewing a recent pull request. This pull request was a fairly harmless move of some utility functions, and the associated import updates that come with the move. There was nothing to suggest from the updates I could see in github that there would be any issues. We're just moving files around. No big deal. LGTM.
+
+It was only when this branch was merged with another, and the approval was reset that I stopped and asked myself the question "Why was this change being made?". It was from that point that led me on a path of discovery about the code that was being changed. I remarked to my colleague that this moment of asking myself "Why?" was part of a personal goal of trying to improve my own approach to reviewing code. It was at this point that I said it was somewhat akin to the 5 Ws and 1 H I learned in school:
 
 - Who
 - What
@@ -18,11 +20,11 @@ It was only when this branch was merged with another, and the approval was reset
 - When
 - How
 
-This meandering train of thought was what eventually led me to write this.
+That meandering train of thought was what eventually led me to write this.
 
 The below is not an official framework or mindset to rush to implement in your team tomorrow. Hopefully, it is instead a way of looking at how to approach a code review, and the various aspects we can all improve on. There are always going to be more specific questions depending on how your team works and with what technologies, so I'll try to keep it as generic as possible.
 
-## All those letters
+## The 5 Ws and 1 H
 
 > I've ordered the list loosely around what I assume people usually consider. Towards the bottom of the list is a little uncertain and could be in a different order from what I have assumed. I'm not actually basing this off of any hard numerical data and each developer may have their own order for these.
 {: .prompt-info }
@@ -68,11 +70,13 @@ For such a short question, we have so many possibilities. Is the code in the cor
 
 - Who would be good to ask about this change?
 
-In this wonderful world of agile we're living in, we don't often have set people required to review certain code. This, generally speaking is a good thing to aspire to do. We should be spreading application and technical knowledge within our teams to a point where everyone has the knowledge and confidence to review changes. However, sometimes there is a team member with more specific knowledge about an implementation or business logic used in features. Getting their input for a change when you're uncertain will definitely pay off in the long run. 
+In this wonderful world of agile we're living in, we don't often have set people required to review certain code. This, generally speaking is a good thing to aspire to do. We should be spreading application and technical knowledge within our teams to a point where everyone has the knowledge and confidence to review changes. However, sometimes there is a team member with more specific knowledge about an implementation or business logic used in certain features. Getting their input for a change could pay off in the long run.
+
+This doesn't mean throwing this review over to another person and forgetting about it. Instead, try asking for feedback about a certain topic for aspect of the code. Not overwhelming certain team members with all of the code review load is very important too!
 
 ### When
 
-We've reached the bottom of the list, and admittedly, to fit with my format, this one might be a bit of a stretch.
+We've reached the bottom of the list, and admittedly, to fit with my format, this one might be a bit of a stretch. Most likely the answer to this question will always be "yes", but still it takes very little time to think about this, and could save a lot of time in the future.
 
 - When should we make this change?
 
@@ -88,3 +92,5 @@ Looking at the above list, I think that there's a way we can more effectively ap
 1. When - Think about if this is an appropriate time to make this change
 1. How - Check that the code has been implemented in a correct, maintainable way
 1. Who - Ask yourself if this would benefit from an additional check by someone with more specific knowledge
+
+By using this mental checklist we can ensure we're not only reviewing the code itself, but also looking at the wider context of the changes being made.
